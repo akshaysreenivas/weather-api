@@ -1,0 +1,14 @@
+export default {
+  logger: {
+    level: 'error',
+    logFile: 'logs/console.log',
+    exceptionFile: 'logs/exception.log',
+    transport: ['console'],
+  },
+  middlewares: {
+    pre: [{ __ssdGlobalMiddlewares__: 'sd_Tp9jNbUvUZ1kJnAn' }],
+    post: [],
+    sequences: { logging: { pre: [{ weatherapi: 'myMiddleWare' }], post: [] } },
+  },
+  ids: { enabled: false, issuerURL: 'https://ids.neutrinos.co' },
+};

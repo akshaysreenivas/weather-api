@@ -1,0 +1,62 @@
+{
+    "TYPE": {
+        "name": "TYPE",
+        "properties": {
+            "production": "client",
+            "ssdURL": "client",
+            "tenantName": "client",
+            "appName": "client",
+            "namespace": "client",
+            "useDefaultExceptionUI": "client",
+            "isIDSEnabled": "client",
+            "SSD_BASE_PATH": "server",
+            "SSD_DEFAULT_PORT": "server",
+            "webAppMountpoint": "both",
+            "CLOCK_TOLERANCE": "server",
+            "NGFORAGE_MOBILE_DRIVER": "client",
+            "WEATHER_API_KEY": "server",
+            "WEATHER_API": "server",
+            "API_KEY": "server"
+        }
+    },
+    "dev": {
+        "name": "dev",
+        "properties": {
+            "production": false,
+            "ssdURL": "http://localhost:8081/api/",
+            "tenantName": "neutrinos_poc_squad",
+            "appName": "first-api-app",
+            "namespace": "com.neutrinos_poc_squad.first-api-app",
+            "useDefaultExceptionUI": true,
+            "isIDSEnabled": "false",
+            "SSD_BASE_PATH": "/api",
+            "SSD_DEFAULT_PORT": "8081",
+            "webAppMountpoint": "web",
+            "CLOCK_TOLERANCE": "5",
+            "NGFORAGE_MOBILE_DRIVER": "INDEXED_DB",
+            "WEATHER_API_KEY": "e4651b7d50cc45494e45e299056276aa",
+            "WEATHER_API": "http://api.openweathermap.org/data/2.5/weather",
+            "API_KEY": "123456789"
+        }
+    },
+    "prod": {
+        "name": "prod",
+        "properties": {
+            "production": true,
+            "ssdURL": "http://localhost:8081/api/",
+            "tenantName": "neutrinos_poc_squad",
+            "appName": "first-api-app",
+            "namespace": "com.neutrinos_poc_squad.first-api-app",
+            "useDefaultExceptionUI": true,
+            "isIDSEnabled": "false",
+            "SSD_BASE_PATH": "/api",
+            "SSD_DEFAULT_PORT": "8081",
+            "webAppMountpoint": "web",
+            "CLOCK_TOLERANCE": "5",
+            "NGFORAGE_MOBILE_DRIVER": "INDEXED_DB",
+            "WEATHER_API_KEY": "e4651b7d50cc45494e45e299056276aa",
+            "WEATHER_API": "http://api.openweathermap.org/data/2.5/weather",
+            "API_KEY": "123456789"
+        }
+    }
+}

@@ -1,0 +1,479 @@
+[
+    {
+        "id": "SSD_SERVICE_ID_sd_G9e39cpi24JKUzBF",
+        "type": "tab",
+        "createdDate": "2023-11-22T06:39:48.841Z",
+        "label": "weatherapi",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 0,
+        "generateNext": true,
+        "serviceName": "weatherapi",
+        "relativeParentPath": ""
+    },
+    {
+        "id": "sd_XcNPMMm4IHtCSbBZ",
+        "type": "HttpIn",
+        "z": "SSD_SERVICE_ID_sd_G9e39cpi24JKUzBF",
+        "viewType": "server",
+        "nodeType": "start",
+        "name": "httpservicein",
+        "path": "getCityWeatherData",
+        "uploadpath": "",
+        "summary": "Get the weather details of a city",
+        "description": "",
+        "method": "post",
+        "sequenceId": "logging",
+        "consumes": "",
+        "produces": "",
+        "filetype": "path",
+        "acceptFileUpload": false,
+        "useDataModel": false,
+        "dataModelIsArray": false,
+        "erd": "",
+        "erdName": "",
+        "entity": "",
+        "entityId": "",
+        "ref": "",
+        "editableListData": {
+            "responses": [],
+            "params": [],
+            "produces": [],
+            "consumes": []
+        },
+        "inputs": 0,
+        "outputs": 1,
+        "validateRequestUsingSwaggerDocs": false,
+        "category": "HTTP",
+        "x": 85,
+        "y": 140,
+        "wires": [
+            [
+                "sd_CNM7bzebRG0k4u0N"
+            ]
+        ],
+        "__ssdTypeInputs__": {
+            "uploadpath": {
+                "type": "str",
+                "value": "",
+                "nullable": "true",
+                "nullableValue": "",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "weatherapi",
+        "functionName": "sd_XcNPMMm4IHtCSbBZ"
+    },
+    {
+        "id": "sd_7v8ia5rmoG2CUgu6",
+        "type": "HttpOut",
+        "z": "SSD_SERVICE_ID_sd_G9e39cpi24JKUzBF",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "weatherData",
+        "headers": {},
+        "responseBody": {
+            "type": "bh.local",
+            "value": "data",
+            "ssd_typedInputField": true
+        },
+        "httpcode": {
+            "type": "num",
+            "value": 200,
+            "ssd_typedInputField": true
+        },
+        "responseType": "obj",
+        "swaggerResponse": {},
+        "responseMapping": {
+            "status": 200,
+            "obj": "bh.local.data",
+            "send": "bh.local.data"
+        },
+        "dataModelIsArray": false,
+        "cookies": [],
+        "inputs": 1,
+        "outputs": 0,
+        "erd": "",
+        "entity": "",
+        "entityId": "",
+        "ref": "",
+        "editableListData": {
+            "headers": [],
+            "produces": [],
+            "responses": []
+        },
+        "cookiesList": {},
+        "switchStates": {
+            "headers": "Map",
+            "cookies": "Map"
+        },
+        "functionName": "weatherData",
+        "category": "HTTP",
+        "x": 765,
+        "y": 140,
+        "wires": [],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "weatherapi",
+        "generated": true
+    },
+    {
+        "id": "sd_OJ3aULIxAs4CISMw",
+        "type": "ServerHttpRequest",
+        "z": "SSD_SERVICE_ID_sd_G9e39cpi24JKUzBF",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "openWeatherapi ",
+        "method": "get",
+        "methodMapping": "",
+        "methodMappingObj": {},
+        "urlMapping": "__ssd__env__process.env.WEATHER_API__ssd__env__end",
+        "urlMappingObj": {
+            "mapVarType": "process.env",
+            "mapVarValue": "WEATHER_API"
+        },
+        "ret": "json",
+        "retMapping": "",
+        "retMappingObj": {},
+        "reqBody": "",
+        "reqBodyObj": {
+            "mapVarType": "bh",
+            "mapVarValue": ""
+        },
+        "resultMapping": "bh.local.result",
+        "resultMappingObj": {
+            "mapVarType": "bh.local",
+            "mapVarValue": "result"
+        },
+        "headers": {},
+        "headersObj": [],
+        "headerMapping": "",
+        "headerMappingObj": {},
+        "params": [],
+        "paramsObj": {},
+        "paramMapping": "bh.local.queryData",
+        "paramMappingObj": {
+            "mapVarType": "bh.local",
+            "mapVarValue": "queryData"
+        },
+        "authType": "",
+        "useAuthTypeMappingObj": {},
+        "useAuthTypeMap": {},
+        "useAuthType": "",
+        "useAuthUsername": "",
+        "useAuthUsernameMappingObj": "",
+        "useAuthPassword": "",
+        "useAuthPasswordMappingObj": "",
+        "useAuthToken": "",
+        "useAuthTokenMappingObj": "",
+        "useQueryString": false,
+        "tls": "",
+        "followRedirect": true,
+        "paytoqs": false,
+        "useAuthentication": false,
+        "rejectUnauthorized": false,
+        "proxy": "",
+        "useProxy": false,
+        "usetls": false,
+        "cookies": [],
+        "cookiesMapObj": {},
+        "cookiesList": {},
+        "switchStates": {
+            "cookies": "Map"
+        },
+        "editableListData": {},
+        "timeout": {
+            "type": "num",
+            "value": ""
+        },
+        "functionName": "openWeatherapi",
+        "category": "HTTP",
+        "x": 405,
+        "y": 140,
+        "wires": [
+            [
+                "sd_VOTDMtonBamD4JqW"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "weatherapi",
+        "generated": true
+    },
+    {
+        "id": "sd_f0qnUKHJNRSg8QBo",
+        "type": "Catch",
+        "z": "SSD_SERVICE_ID_sd_G9e39cpi24JKUzBF",
+        "viewType": "common",
+        "nodeType": "start",
+        "name": "",
+        "selectedNodes": "all-nodes",
+        "selectCatchType": "allnodes",
+        "masternodeList": "",
+        "ignoreList": [
+            "sd_67t17x9DjcfoAUQc"
+        ],
+        "functionName": "sd_f0qnUKHJNRSg8QBo",
+        "category": "General",
+        "x": 765,
+        "y": 320,
+        "wires": [
+            [
+                "sd_67t17x9DjcfoAUQc"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "weatherapi"
+    },
+    {
+        "id": "sd_67t17x9DjcfoAUQc",
+        "type": "ServerLog",
+        "z": "SSD_SERVICE_ID_sd_G9e39cpi24JKUzBF",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "weatherapi error",
+        "outputs": 0,
+        "logObject": "bh.error",
+        "logLevel": "error",
+        "functionName": "weatherapiError",
+        "category": "General",
+        "x": 905,
+        "y": 320,
+        "wires": [],
+        "__ssdTypeInputs__": {
+            "logObject": {
+                "type": "bh",
+                "value": "error",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "weatherapi",
+        "generated": true
+    },
+    {
+        "id": "sd_CNM7bzebRG0k4u0N",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_G9e39cpi24JKUzBF",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "queryConfiguration",
+        "script": "bh.local.queryData={\n    q:bh.input.query.city,\n    appid:process.env.WEATHER_API_KEY,\n    units:\"metric\"\n}\nconsole.log(bh.input)",
+        "functionName": "queryConfiguration",
+        "category": "Function",
+        "x": 245,
+        "y": 140,
+        "wires": [
+            [
+                "sd_OJ3aULIxAs4CISMw"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "weatherapi",
+        "generated": true
+    },
+    {
+        "id": "sd_VOTDMtonBamD4JqW",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_G9e39cpi24JKUzBF",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "resultConfiguration",
+        "script": "bh.local.data=bh.local.result.payload",
+        "functionName": "resultConfiguration",
+        "category": "Function",
+        "x": 565,
+        "y": 140,
+        "wires": [
+            [
+                "sd_7v8ia5rmoG2CUgu6"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "weatherapi",
+        "generated": true
+    },
+    {
+        "id": "sd_HlLdBdHTseY7LUev",
+        "type": "MiddlewareStart",
+        "z": "SSD_SERVICE_ID_sd_G9e39cpi24JKUzBF",
+        "viewType": "server",
+        "nodeType": "start",
+        "name": "myMiddleWare",
+        "inputs": 0,
+        "outputs": 1,
+        "category": "HTTP",
+        "x": 125,
+        "y": 340,
+        "wires": [
+            [
+                "sd_ctx03tfA4NtDTVvS"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "weatherapi",
+        "functionName": "sd_HlLdBdHTseY7LUev"
+    },
+    {
+        "id": "sd_BuJcPHJ4jX6EReKF",
+        "type": "MiddlewareEnd",
+        "z": "SSD_SERVICE_ID_sd_G9e39cpi24JKUzBF",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "headers": {
+            "type": "bh",
+            "value": ""
+        },
+        "responseBody": {
+            "type": "bh",
+            "value": ""
+        },
+        "httpcode": {
+            "type": "num",
+            "value": ""
+        },
+        "responseType": "next",
+        "responseMapping": "",
+        "cookies": [],
+        "inputs": 1,
+        "outputs": 0,
+        "editableListData": {
+            "headers": []
+        },
+        "cookiesList": {},
+        "switchStates": {
+            "headers": "Map",
+            "cookies": "Map"
+        },
+        "functionName": "sd_BuJcPHJ4jX6EReKF",
+        "category": "HTTP",
+        "x": 525,
+        "y": 260,
+        "wires": [],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "weatherapi",
+        "generated": true
+    },
+    {
+        "id": "sd_ctx03tfA4NtDTVvS",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_G9e39cpi24JKUzBF",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "logic",
+        "script": "  console.log(`${new Date().toISOString()} - ${bh.input.method} - ${bh.input.path}`);\n \n\n  let auth = bh.input.headers.authorization\n\n  \n  if(auth && auth === `${process.env.API_KEY}` ){\n    bh.local.auth=true\n  }else{\n      bh.local.auth=false\n  }",
+        "functionName": "logic",
+        "category": "Function",
+        "x": 245,
+        "y": 340,
+        "wires": [
+            [
+                "sd_eID2BAvQcCbEq2e4"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "weatherapi",
+        "generated": true
+    },
+    {
+        "id": "sd_eID2BAvQcCbEq2e4",
+        "type": "Switch",
+        "z": "SSD_SERVICE_ID_sd_G9e39cpi24JKUzBF",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "authCheck",
+        "property": "auth",
+        "propertyType": "bh.local",
+        "propertyGv": "bh.local.auth",
+        "rules": [
+            {
+                "t": "true"
+            },
+            {
+                "t": "false"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 2,
+        "functionName": "authCheck",
+        "category": "Function",
+        "x": 365,
+        "y": 340,
+        "wires": [
+            [
+                "sd_BuJcPHJ4jX6EReKF"
+            ],
+            [
+                "sd_XCX6mYRSRTc4aUsu"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "weatherapi",
+        "generated": true
+    },
+    {
+        "id": "sd_XCX6mYRSRTc4aUsu",
+        "type": "HttpOut",
+        "z": "SSD_SERVICE_ID_sd_G9e39cpi24JKUzBF",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "headers": {},
+        "responseBody": {
+            "type": "str",
+            "value": "unauthorised",
+            "ssd_typedInputField": true
+        },
+        "httpcode": {
+            "type": "num",
+            "value": 401,
+            "ssd_typedInputField": true
+        },
+        "responseType": "obj",
+        "swaggerResponse": {},
+        "responseMapping": {
+            "status": 401,
+            "obj": "\"unauthorised\"",
+            "send": "\"unauthorised\""
+        },
+        "dataModelIsArray": false,
+        "cookies": [],
+        "inputs": 1,
+        "outputs": 0,
+        "erd": "",
+        "entity": "",
+        "entityId": "",
+        "ref": "",
+        "editableListData": {
+            "headers": [],
+            "produces": [],
+            "responses": []
+        },
+        "cookiesList": {},
+        "switchStates": {
+            "headers": "Map",
+            "cookies": "Map"
+        },
+        "functionName": "sd_XCX6mYRSRTc4aUsu",
+        "category": "HTTP",
+        "x": 525,
+        "y": 400,
+        "wires": [],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "weatherapi",
+        "generated": true
+    }
+]

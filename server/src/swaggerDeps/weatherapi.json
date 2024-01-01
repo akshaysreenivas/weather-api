@@ -1,0 +1,15 @@
+{
+    "/getCityWeatherData": {
+        "post": {
+            "summary": "Get the weather details of a city",
+            "description": "",
+            "consumes": [],
+            "produces": [],
+            "parameters": [],
+            "responses": {},
+            "tags": [
+                "weatherapi"
+            ]
+        }
+    }
+}

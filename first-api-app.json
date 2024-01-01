@@ -1,0 +1,13 @@
+{
+    "displayName": "first-api-app",
+    "appName": "first-api-app",
+    "description": "initial app",
+    "lastModified": "2023-11-22T05:56:02.829Z",
+    "imgSourcePath": "",
+    "version": "1.0.0",
+    "appType": "apiOnly",
+    "templateName": "blank",
+    "createDate": "2023-11-22T05:55:50.032Z",
+    "analyticsId": "33baffe1-0123-7719-09f0-96605d78e42b",
+    "createdStudioVersion": "9.2.1"
+}
